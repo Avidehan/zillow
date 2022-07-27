@@ -39,8 +39,4 @@ We would like to receive the results in the following format:
        
        https://www.zillow.com/homes/32022-Poppy-Way-Lake-Elsinore,-CA-92532_rb/17937295_zpid/
 
-<<<<<<< HEAD
- 
-=======
- 
->>>>>>> origin/master
+
