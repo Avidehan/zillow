@@ -23,7 +23,7 @@ headers = {
 def get_zipid_from_url(url):
     arr_url = url.split('/')
 
-    return arr_url[-2][:5]
+    return arr_url[-2][:-5]
 
 
 def get_history(zipid):
@@ -75,6 +75,7 @@ def get_current_value(zipid):
 def get_history_by_url(url):
     data = {}
     zipid = get_zipid_from_url(url)
+    print(zipid)
     if get_history(zipid)['data']['property']['homeValueChartData']:
         for data_history in get_history(zipid)['data']['property']['homeValueChartData'][0]['points']:
             value = data_history['y']
@@ -99,7 +100,7 @@ def get_history_by_url(url):
 
 
 if __name__ == "__main__":
-    url = 'https://www.zillow.com/homedetails/24406-Poinsettia-Dr-Lake-Elsinore-CA-92532/303945064_zpid/'
+    url = 'https://www.zillow.com/homes/32022-Poppy-Way-Lake-Elsinore,-CA-92532_rb/17937295_zpid/'
     arr_url = url.split('/')
     data = get_history_by_url(url)
     with open(f'{arr_url[-3]}.csv', 'w', newline='') as csvfile:
